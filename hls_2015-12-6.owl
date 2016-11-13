@@ -1,0 +1,997 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.dadfha.com/ont/hls"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.dadfha.com/ont/hls"
+     versionIRI="http://www.dadfha.com/ont/hls/1.0.0">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="gn" IRI="http://www.geonames.org/ontology#"/>
+    <Prefix name="dul" IRI="http://www.loa-cnr.it/ontologies/DUL.owl#"/>
+    <Prefix name="geo" IRI="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
+    <Prefix name="hls" IRI="http://www.dadfha.com/ont/hls#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="ssn" IRI="http://purl.oclc.org/NET/ssnx/ssn#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="qudt" IRI="http://qudt.org/schema/qudt#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="unit" IRI="http://qudt.org/vocab/qudt#"/>
+    <Import>http://purl.oclc.org/NET/ssnx/ssn</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Human Localization Sensor Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An ontology describing knowledge about Human Localization Sensor (HLS) in relation to human location context and localization methods. 
+
+It imports, mapped, and uses some constructs from major 3rd parties ontologies including: Semantic Sensor Network (SSN), DOLCE Ultra Lite (DUL), Quantities Units Dimensions and Data Types (QUDT) and GeoNames.
+
+The main objective is to be able to search for sensor that can be used to identify human location.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="qudt:Unit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanLocalizationSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocalizationMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocationProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocationSensorOutput"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocationValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mobility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObjectIdentificationCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalOrVirtualSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalPropertyForLocalizationMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PositioningUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorForHumanPresence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorForLocalizationProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorForThingLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorGivingLocationOutput"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorObserveHumanLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialRelatedProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stationary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UniqueIdentityOfThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserInterfaceSensing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VirtualSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wearable"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gn:Feature"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="geo:SpatialThing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUnitOfMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isUsedByMethod"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#observeFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#produce"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#useProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#useSensor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLocationName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMathML"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMethodName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasQualityValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasQuantityValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasURI"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUnitStandardNotation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="gn:name"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#broaderMatch"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#narrowerMatch"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#HumanLocalizationSensor"/>
+        <ObjectUnionOf>
+            <Class IRI="#SensorForHumanPresence"/>
+            <Class IRI="#SensorForLocalizationProperty"/>
+            <Class IRI="#SensorForThingLocation"/>
+            <Class IRI="#SensorGivingLocationOutput"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Location"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasLocationName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LocationSensorOutput"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="ssn:SensorOutput"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:hasValue"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LocationValue"/>
+                    <ObjectIntersectionOf>
+                        <Class abbreviatedIRI="ssn:ObservationValue"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="#hasUnitOfMeasurement"/>
+                            <Class IRI="#PositioningUnit"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ObjectIdentificationCapability"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="ssn:MeasurementCapability"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:forProperty"/>
+                <Class IRI="#UniqueIdentityOfThing"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PhysicalOrVirtualSensor"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="ssn:Sensor"/>
+            <Class IRI="#VirtualSensor"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PhysicalPropertyForLocalizationMethod"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PhysicalProperty"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isUsedByMethod"/>
+                <Class IRI="#LocalizationMethod"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorForHumanPresence"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="ssn:Sensor"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorForHumanPresence"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="dul:PhysicalObject"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:implements"/>
+                <Class IRI="#UserInterfaceSensing"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorForLocalizationProperty"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PhysicalOrVirtualSensor"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                <Class IRI="#PhysicalPropertyForLocalizationMethod"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorForThingLocation"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="ssn:Sensor"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#ObjectIdentificationCapability"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
+                        <Class abbreviatedIRI="ssn:MeasurementRange"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#UniqueIdentityOfThing"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#Location"/>
+                            <ObjectIntersectionOf>
+                                <Class abbreviatedIRI="dul:Entity"/>
+                                <ObjectSomeValuesFrom>
+                                    <ObjectProperty IRI="#hasLocation"/>
+                                    <Class IRI="#Location"/>
+                                </ObjectSomeValuesFrom>
+                            </ObjectIntersectionOf>
+                        </ObjectUnionOf>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorGivingLocationOutput"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#SensorObserveHumanLocation"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#produce"/>
+                <Class IRI="#LocationSensorOutput"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorObserveHumanLocation"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class abbreviatedIRI="ssn:Sensor"/>
+                <ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+                        <Class IRI="#Mobility"/>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty abbreviatedIRI="ssn:onPlatform"/>
+                        <Class abbreviatedIRI="dul:NaturalPerson"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectUnionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="#LocationProperty"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+                            <Class abbreviatedIRI="ssn:Sensor"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectUnionOf>
+                    <Class IRI="#VirtualSensor"/>
+                    <ObjectIntersectionOf>
+                        <Class abbreviatedIRI="ssn:Sensor"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+                            <Class IRI="#Stationary"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectUnionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="#LocationProperty"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+                            <Class abbreviatedIRI="dul:NaturalPerson"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#VirtualSensor"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="dul:Object"/>
+            <ObjectComplementOf>
+                <Class abbreviatedIRI="dul:PhysicalObject"/>
+            </ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:implements"/>
+                <Class abbreviatedIRI="ssn:Sensing"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:detects"/>
+                <Class abbreviatedIRI="ssn:Stimulus"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+                <Class abbreviatedIRI="ssn:MeasurementCapability"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                <Class abbreviatedIRI="ssn:Property"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#HumanLocalizationSensor"/>
+        <Class IRI="#PhysicalOrVirtualSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <Class abbreviatedIRI="ssn:Sensing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#useProperty"/>
+            <Class abbreviatedIRI="ssn:Property"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#useSensor"/>
+            <Class IRI="#PhysicalOrVirtualSensor"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasMethodName"/>
+            <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasDescription"/>
+            <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasMathML"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasURI"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class abbreviatedIRI="ssn:FeatureOfInterest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class abbreviatedIRI="gn:Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class abbreviatedIRI="geo:SpatialThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+            <Class IRI="#LocationProperty"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationProperty"/>
+        <Class abbreviatedIRI="ssn:Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationProperty"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+            <Class IRI="#Location"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationValue"/>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationValue"/>
+        <Class abbreviatedIRI="dul:SpaceRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationValue"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasUnitOfMeasurement"/>
+            <Class IRI="#PositioningUnit"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mobility"/>
+        <Class IRI="#SpatialRelatedProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalOrVirtualSensor"/>
+        <Class abbreviatedIRI="dul:Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalProperty"/>
+        <Class abbreviatedIRI="ssn:Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+        <Class IRI="#PhysicalProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PositioningUnit"/>
+        <Class abbreviatedIRI="qudt:Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PositioningUnit"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasUnitStandardNotation"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorForHumanPresence"/>
+        <Class IRI="#HumanLocalizationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorForHumanPresence"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+            <ObjectIntersectionOf>
+                <Class abbreviatedIRI="ssn:MeasurementCapability"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
+                    <Class abbreviatedIRI="ssn:MeasurementRange"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorForHumanPresence"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLocation"/>
+            <Class IRI="#Location"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorForLocalizationProperty"/>
+        <Class IRI="#HumanLocalizationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorForThingLocation"/>
+        <Class IRI="#HumanLocalizationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorObserveHumanLocation"/>
+        <Class IRI="#HumanLocalizationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialRelatedProperty"/>
+        <Class abbreviatedIRI="ssn:Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stationary"/>
+        <Class IRI="#SpatialRelatedProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UniqueIdentityOfThing"/>
+        <Class abbreviatedIRI="ssn:Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserInterfaceSensing"/>
+        <Class abbreviatedIRI="ssn:Sensing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserInterfaceSensing"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:hasInput"/>
+            <Class abbreviatedIRI="ssn:Input"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wearable"/>
+        <Class IRI="#Mobility"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Mobility"/>
+        <Class IRI="#Stationary"/>
+    </DisjointClasses>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="#hasLocation"/>
+        <ObjectProperty abbreviatedIRI="dul:hasLocation"/>
+    </EquivalentObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#produce"/>
+        <ObjectProperty abbreviatedIRI="ssn:isProducedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLocation"/>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#useProperty"/>
+        <ObjectProperty IRI="#isUsedByMethod"/>
+    </InverseObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty abbreviatedIRI="ssn:observes"/>
+            <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#observeFeature"/>
+    </SubObjectPropertyOf>
+    <EquivalentDataProperties>
+        <DataProperty IRI="#hasLocationName"/>
+        <DataProperty abbreviatedIRI="gn:name"/>
+    </EquivalentDataProperties>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDescription"/>
+        <DataProperty IRI="#hasQualityValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasMathML"/>
+        <DataProperty IRI="#hasQualityValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasMethodName"/>
+        <DataProperty IRI="#hasQualityValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasQualityValue"/>
+        <DataProperty abbreviatedIRI="dul:hasDataValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasQuantityValue"/>
+        <DataProperty abbreviatedIRI="dul:hasDataValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasURI"/>
+        <DataProperty IRI="#hasQualityValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasUnitStandardNotation"/>
+        <DataProperty IRI="#hasQualityValue"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUnitStandardNotation"/>
+        <Class IRI="#PositioningUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDescription"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMathML"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMethodName"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasURI"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUnitStandardNotation"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HumanLocalizationSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Union of all 4 patterns for human localization sensor defined classes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HumanLocalizationSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Human Localization Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LocalizationMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A localization method. It may use some properties in the derivation of location output.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LocalizationMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Localization Method</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location of things. It&apos;s a subclass of ssn:FeatureOfInterest so it can be subject for an observation through its property.
+
+It is also a subclass of geo:SpatialThing and gn:Feature which, for the latter, is further linked to geographical feature related concepts in GN.
+
+Its definition is similar (skos:closeMatch) but not identical to Place concept in DUL because it&apos;s meant to be measurable through its property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Location</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LocationProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A property of a location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LocationProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LocationSensorOutput</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location sensor output is defined as the output from sensor, be it physical or virtual, that represents any kind of location or positioning information.
+
+The inclusion criteria are output that ssn:hasValue which is a kind of LocationValue or any ssn:ObservationValue that has hasUnitOfMeasurement relation to a PositioningUnit  or a combination of these two.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LocationSensorOutput</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location Sensor Output</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LocationValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">All kind of value describing a location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LocationValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location Value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ObjectIdentificationCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Measurement capability of a sensor that supports unique identification for a kind of thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ObjectIdentificationCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Object Identification Capability</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalOrVirtualSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Covering class encompassing Sensor union with VirtualSensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PhysicalOrVirtualSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Physical Or Virtual Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Class for all kind of physical properties observable by sensors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PhysicalProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Physical Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalPropertyAlteredByHumanPresence</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Represents knowledge of physical properties of an object or surrounding those can be influenced by human presence near by.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PhysicalPropertyAlteredByHumanPresence</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Physical Property Altered By Human Presence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalPropertyForLocalizationMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Physical property used in localization method(s).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PhysicalPropertyForLocalizationMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Physical Property for Localization Method</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PositioningUnit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Unit describing position of an entity in space.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PositioningUnit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Positioning Unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorForHumanPresence</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This pattern includes sensor that can detect human presence and physical object that has user interface and can give output on user&apos;s action with it (i.e. user interface sensing). The latter is to accommodate IoT aspects into sensor&apos;s realm.
+
+It is required that the sensor is asserted with location information to be inferred from and have limited range of sensing to confine an approximate area of human presence in case when no other estimation model is applied. 
+
+For physical object with user interface sensing, the interface must not be operated remotely from unbound distance location. The restriction on this is, however, implementation specific. As a suggestion, one may look at action log output to see if the operation is made locally or remotely.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SensorForHumanPresence</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor For Human Presence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorForLocalizationProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor that can measure properties used in a localization methods.
+
+However, with this high-level abstraction, it cannot be used to classify sensors observing all physical properties used by a method. To do that a defined class for each localization method must be created separately.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SensorForLocalizationProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor for Localization Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorForThingLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor for Thing Location is a sensor that can sense a presence of a unique thing associated with location information or can observe a unique property of a location. Location information may be retrieved directly from the object or from other means of location resolution.
+
+RFID and iBeacon are examples of identification technology which can be used as tag for object or location. They are normally sensed using a specific kind of reader device. Retrieved information may be location information or reference handle for 3rd party resolution service. 
+
+For example: uID Architecture offers object identification and information resolution infrastructure that decouples object identification from its context, e.g. location or URI, due to constraint resource of electronic tag and dynamic nature of context which may need update at any given time.
+
+Below are basic requirements for this human localization sensor scheme.
+
+Things must have their location information described directly or are embedded with resolvable handle like URI or ID.
+The “reader” sensor is a mobile terminal that can sense the presence of thing within limited or measurable range in order to determine relative distance, with a degree of precision, from itself to sensed thing so that sensing location can be inferred from thing’s location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SensorForThingLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor for Thing Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
+        <IRI>#SensorGivingLocationOutput</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor Giving Location Output</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorGivingLocationOutput</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">It is a SensorObserveHumanLocation that produces LocationSensorOuput.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorObserveHumanLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">There are 2 cases for this pattern. First, a mobile sensor that observes location property of the sensor itself and is attached to a person. Second, a stationary sensor or virtaul sensor that directly observing location property of human.
+
+However, in the first case, there is no guarantee that the sensor will output its own location since the expression using self restriction on a property chain is considered non-simple by OWL DL and cannot be computed. Thus it is responsibility of the user of this class to check for semantic validity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SensorObserveHumanLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor Observe Human  Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpatialRelatedProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Class for spatial related property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SpatialRelatedProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Spatial Related Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UniqueIdentityOfThing</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Class representing a property of thing that can be used to uniqely identify itself from other things.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UniqueIdentityOfThing</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Unique Identity of Thing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VirtualSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A virtual sensor is an abstract information entity that serves sensor function but has no physical body (e.g. sensing webservice).  By class definition it&apos;s a dul:Object implementing ssn:Sensing but never be a dul:PhysicalObject.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#VirtualSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Virtual Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Wearable</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Wearable property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Wearable</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Wearable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDescription</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Description for an entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Property to specify Location for an entity. It&apos;s skos:exactMatch to dul:hasLocation. It also encompasses things which has location property via property chain.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Has Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMathML</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">MathML expression in xsd:string.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMethodName</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A data property to describe method name.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasURI</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">URI for an entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasUnitOfMeasurement</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The unit of measurement posed by an entity related to value.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasUnitStandardNotation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Unit standard notation in xsd:string.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isLocationOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Specify an entity owning location property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isLocationOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Is Location Of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isUsedByMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Inverse of useProperty property that specifies property(ies) used in localization methods.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#observeFeature</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">It is the property chain linking ssn:Sensor to ssn:FeatureOfInterest (which may be the sensor itself).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#observeFeature</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Observe Feature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#produce</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Relation between a producer and a produced entity: for example, between a sensor and the produced output. 
+
+This property is needed to express class description of sensor that produces a particular output as ssn:isProducedBy is not symmetrical and thus cannot be used in property restriction for a Sensor class to a SensorOutput.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#produce</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">produce</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#useProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">To use property in a method. This implies that a property value is used as input for the method.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#useSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Property describing sensor used in localization method.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,1 @@
+Human Localization Sensor Ontology (HLS) is OWL2 DL ontology, based on SSN ontology, describing knowledge in human localization sensing patterns using description logics (SROIQ) as defined classes, allowing automatic classification (i.e. semantic sensor search) of sensors that can be used to find human location.

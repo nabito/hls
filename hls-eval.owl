@@ -1,0 +1,2545 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.dadfha.com/ont/hls"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.dadfha.com/ont/hls"
+     versionIRI="http://www.dadfha.com/ont/hls/1.0.0">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="gn" IRI="http://www.geonames.org/ontology#"/>
+    <Prefix name="dul" IRI="http://www.loa-cnr.it/ontologies/DUL.owl#"/>
+    <Prefix name="geo" IRI="http://www.w3.org/2003/01/geo/wgs84_pos#"/>
+    <Prefix name="hls" IRI="http://www.dadfha.com/ont/hls#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="ssn" IRI="http://purl.oclc.org/NET/ssnx/ssn#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="qudt" IRI="http://qudt.org/schema/qudt#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="unit" IRI="http://qudt.org/vocab/qudt#"/>
+    <Import>http://purl.oclc.org/NET/ssnx/ssn</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Human Localization Sensor Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An ontology describing knowledge about Human Localization Sensor (HLS) in relation to human location context and localization methods. 
+
+It imports, mapped, and uses some constructs from major 3rd parties ontologies including: Semantic Sensor Network (SSN), DOLCE Ultra Lite (DUL), Quantities Units Dimensions and Data Types (QUDT) and GeoNames.
+
+The main objective is to be able to search for sensor that can be used to identify human location.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI="qudt:Unit"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="unit:DegreeAngle"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="unit:Meter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AccelerationUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Altitude"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AltitudeValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Elevation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GpsCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HumanLocalizationSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LatitudeLongitudeCoordinateUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocalizationMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Location"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocationProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocationSensorOutput"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocationValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeterDistanceToReferencePoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mobility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObjectIdentificationCapability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Orientation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalOrVirtualSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalPropertyForLocalizationMethod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PositioningUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PressureObservation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorForHumanPresence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorForLocalizationProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorForThingLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorGivingLocationOutput"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SensorObserveHumanLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialRelatedProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stationary"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TopViewImagePosition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UniqueIdentityOfThing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserInterfaceSensing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VirtualSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VisualDepthInformation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wearable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wgs84LatLonValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#XyCoordinateValue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#XyCoordinates"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#XyzCoordinates"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="gn:Feature"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="geo:SpatialThing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCoordinateSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasLocation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUnitOfMeasurement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isUsedByMethod"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#observeFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#produce"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#useProperty"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#useSensor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="geo:alt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="geo:lat"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="geo:long"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLocationName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMathML"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMethodName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasQualityValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasQuantityValue"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasURI"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUnitStandardNotation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="gn:name"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Acceleration"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AcousticProperty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AcousticToaLocalization"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AliceTopViewImagePosition"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AltitudeValue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AngularVelocity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BarometricSensor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BarometricSensorOutput1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BirdEyeViewCamera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bob"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BobVisualDepthInformation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BobXyCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bs1AltitudeProperty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CapacitiveSensor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Charlie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CvSlam"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DaiwaUbiBldgExterior"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DaiwaUbiBldgHallway1F"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DaiwaUbiquitousBuilding"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DeadReckoning"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DopplerRadar1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DopplerScanLocalization"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ElectricField"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ElectricFieldLocalization"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GpsBeaconRadioSignal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GpsObservationValue1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GpsSensor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GpsSensor2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GpsSensorOutput1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GpsToaLocalizationMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gs1GpsCoordProperty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HumanLocationTracking"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Imu2XyzCoordinates"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InfraredProperty1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#InfraredProximitySensing1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IntertialMeasurementUnit1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IntertialMeasurementUnit2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KinectOneSensor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KinectSensor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LandmarkVisualFeatures"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LatitudeLongitudeCoordinateUnit"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MagneticField"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MarkovChainFootstepLocalize"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MenToilet3F"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MicroDopplerSignature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MicrophoneSensor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MobileCam2MeasurementRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MobileCameraSensor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MobileCameraSensor2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mobility"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NarrowBandRadar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NarrowBandRadioSignal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NarrowBandTomography"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PassiveInfraredSensor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PassiveRfidTagReadCapability"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PeopleTrackingService"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PiezoelectricSensor1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PiezoelectricSensor2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pressure"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PressureObservation1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RfSignal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RfidReader1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RfidReaderMeasurementRange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RfidTagUuid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Room304"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SiftHumanBodyDetection"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SlamScenceRecognition"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmartElevator"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmartPhone1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmartPhone2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SmartPhone3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SoundIntensity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Stationary"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#StationaryCamera1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#StructuredLightPattern"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ThermalImager"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ThermalRadiation"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UltraWideBandRadarLocalizationMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UltraWideBandRadioPulse"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UltraWideBandTransceiver"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UltrasonicTransducer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UserInterfaceSensing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#VisualProperty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WiFiFingerprintMethod"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WiFiProximitySensing1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WifiDevXyCoordinate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WifiDevice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WifiProximitySensor"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WifiRssiProperty"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WoodTable"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#XyCoordinatesOnPressureSensitiveTiles"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#XyLocationOutput"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iBeaconId"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iBeaconIdReceiverCapability"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iBeaconProximitySensing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iBeaconRadioSignal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#iBeaconReceiverRange"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#broaderMatch"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#closeMatch"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#exactMatch"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#narrowerMatch"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AccelerationUnit"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PositioningUnit"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#hasUnitStandardNotation"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:string"/>
+                    <FacetRestriction facet="&xsd;pattern">
+                        <Literal datatypeIRI="&rdf;PlainLiteral">m/s^2</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AltitudeValue"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LocationValue"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasUnitOfMeasurement"/>
+                <Class abbreviatedIRI="unit:Meter"/>
+            </ObjectAllValuesFrom>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#hasQuantityValue"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:string"/>
+                    <FacetRestriction facet="&xsd;pattern">
+                        <Literal datatypeIRI="&rdf;PlainLiteral">(?:\d*\.)?\d+</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HumanLocalizationSensor"/>
+        <ObjectUnionOf>
+            <Class IRI="#SensorForHumanPresence"/>
+            <Class IRI="#SensorForLocalizationProperty"/>
+            <Class IRI="#SensorForThingLocation"/>
+            <Class IRI="#SensorGivingLocationOutput"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LatitudeLongitudeCoordinateUnit"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PositioningUnit"/>
+            <DataSomeValuesFrom>
+                <DataProperty IRI="#hasUnitStandardNotation"/>
+                <DatatypeRestriction>
+                    <Datatype abbreviatedIRI="xsd:string"/>
+                    <FacetRestriction facet="&xsd;pattern">
+                        <Literal datatypeIRI="&rdf;PlainLiteral">([+-]?\d*\.\d+)(?![-+0-9\.])</Literal>
+                    </FacetRestriction>
+                </DatatypeRestriction>
+            </DataSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Location"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasLocationName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LocationSensorOutput"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="ssn:SensorOutput"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:hasValue"/>
+                <ObjectUnionOf>
+                    <Class IRI="#LocationValue"/>
+                    <ObjectIntersectionOf>
+                        <Class abbreviatedIRI="ssn:ObservationValue"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="#hasUnitOfMeasurement"/>
+                            <Class IRI="#PositioningUnit"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ObjectIdentificationCapability"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="ssn:MeasurementCapability"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:forProperty"/>
+                <Class IRI="#UniqueIdentityOfThing"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PhysicalOrVirtualSensor"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="ssn:Sensor"/>
+            <Class IRI="#VirtualSensor"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PhysicalPropertyForLocalizationMethod"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PhysicalProperty"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isUsedByMethod"/>
+                <Class IRI="#LocalizationMethod"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorForHumanPresence"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="ssn:Sensor"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorForHumanPresence"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="dul:PhysicalObject"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:implements"/>
+                <Class IRI="#UserInterfaceSensing"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorForLocalizationProperty"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#PhysicalOrVirtualSensor"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                <Class IRI="#PhysicalPropertyForLocalizationMethod"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorForThingLocation"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="ssn:Sensor"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#ObjectIdentificationCapability"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
+                        <Class abbreviatedIRI="ssn:MeasurementRange"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#UniqueIdentityOfThing"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+                        <ObjectUnionOf>
+                            <Class IRI="#Location"/>
+                            <ObjectIntersectionOf>
+                                <Class abbreviatedIRI="dul:Entity"/>
+                                <ObjectSomeValuesFrom>
+                                    <ObjectProperty IRI="#hasLocation"/>
+                                    <Class IRI="#Location"/>
+                                </ObjectSomeValuesFrom>
+                            </ObjectIntersectionOf>
+                        </ObjectUnionOf>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorGivingLocationOutput"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#SensorObserveHumanLocation"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#produce"/>
+                <Class IRI="#LocationSensorOutput"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SensorObserveHumanLocation"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class abbreviatedIRI="ssn:Sensor"/>
+                <ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+                        <Class IRI="#Mobility"/>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty abbreviatedIRI="ssn:onPlatform"/>
+                        <Class abbreviatedIRI="dul:NaturalPerson"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectUnionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="#LocationProperty"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+                            <Class abbreviatedIRI="ssn:Sensor"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectUnionOf>
+                    <Class IRI="#VirtualSensor"/>
+                    <ObjectIntersectionOf>
+                        <Class abbreviatedIRI="ssn:Sensor"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+                            <Class IRI="#Stationary"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectUnionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="#LocationProperty"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+                            <Class abbreviatedIRI="dul:NaturalPerson"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#VirtualSensor"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="dul:Object"/>
+            <ObjectComplementOf>
+                <Class abbreviatedIRI="dul:PhysicalObject"/>
+            </ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:implements"/>
+                <Class abbreviatedIRI="ssn:Sensing"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:detects"/>
+                <Class abbreviatedIRI="ssn:Stimulus"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+                <Class abbreviatedIRI="ssn:MeasurementCapability"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty abbreviatedIRI="ssn:observes"/>
+                <Class abbreviatedIRI="ssn:Property"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Wgs84LatLonValue"/>
+        <ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="#LocationValue"/>
+                <DataSomeValuesFrom>
+                    <DataProperty IRI="#hasQuantityValue"/>
+                    <DatatypeRestriction>
+                        <Datatype abbreviatedIRI="xsd:string"/>
+                        <FacetRestriction facet="&xsd;pattern">
+                            <Literal datatypeIRI="&rdf;PlainLiteral">1.234</Literal>
+                        </FacetRestriction>
+                    </DatatypeRestriction>
+                </DataSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasUnitOfMeasurement"/>
+                <Class abbreviatedIRI="unit:DegreeAngle"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasUnitOfMeasurement"/>
+                <Class abbreviatedIRI="unit:DegreeAngle"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="unit:DegreeAngle"/>
+        <Class abbreviatedIRI="qudt:Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="unit:Meter"/>
+        <Class abbreviatedIRI="qudt:Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Altitude"/>
+        <Class IRI="#LocationProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Altitude"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:hasValue"/>
+            <Class IRI="#AltitudeValue"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Altitude"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:hasValue"/>
+            <Class IRI="#AltitudeValue"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Elevation"/>
+        <Class IRI="#LocationProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GpsCoordinate"/>
+        <Class IRI="#LocationProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GpsCoordinate"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:hasValue"/>
+            <Class IRI="#Wgs84LatLonValue"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GpsCoordinate"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:hasValue"/>
+            <Class IRI="#Wgs84LatLonValue"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HumanLocalizationSensor"/>
+        <Class IRI="#PhysicalOrVirtualSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <Class abbreviatedIRI="ssn:Sensing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#useProperty"/>
+            <Class abbreviatedIRI="ssn:Property"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#useSensor"/>
+            <Class IRI="#PhysicalOrVirtualSensor"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasMethodName"/>
+            <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasDescription"/>
+            <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasMathML"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocalizationMethod"/>
+        <DataAllValuesFrom>
+            <DataProperty IRI="#hasURI"/>
+            <Datatype abbreviatedIRI="xsd:anyURI"/>
+        </DataAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class abbreviatedIRI="ssn:FeatureOfInterest"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class abbreviatedIRI="gn:Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <Class abbreviatedIRI="geo:SpatialThing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Location"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+            <Class IRI="#LocationProperty"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationProperty"/>
+        <Class abbreviatedIRI="ssn:Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationProperty"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+            <Class IRI="#Location"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationValue"/>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationValue"/>
+        <Class abbreviatedIRI="dul:SpaceRegion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationValue"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasUnitOfMeasurement"/>
+            <Class IRI="#PositioningUnit"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeterDistanceToReferencePoint"/>
+        <Class IRI="#LocationProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mobility"/>
+        <Class IRI="#SpatialRelatedProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Orientation"/>
+        <Class IRI="#LocationProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalOrVirtualSensor"/>
+        <Class abbreviatedIRI="dul:Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalProperty"/>
+        <Class abbreviatedIRI="ssn:Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+        <Class IRI="#PhysicalProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PositioningUnit"/>
+        <Class abbreviatedIRI="qudt:Unit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PositioningUnit"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasUnitStandardNotation"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PressureObservation"/>
+        <Class abbreviatedIRI="ssn:Observation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorForHumanPresence"/>
+        <Class IRI="#HumanLocalizationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorForHumanPresence"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+            <ObjectIntersectionOf>
+                <Class abbreviatedIRI="ssn:MeasurementCapability"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
+                    <Class abbreviatedIRI="ssn:MeasurementRange"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorForHumanPresence"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasLocation"/>
+            <Class IRI="#Location"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorForLocalizationProperty"/>
+        <Class IRI="#HumanLocalizationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorForThingLocation"/>
+        <Class IRI="#HumanLocalizationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SensorObserveHumanLocation"/>
+        <Class IRI="#HumanLocalizationSensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialRelatedProperty"/>
+        <Class abbreviatedIRI="ssn:Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stationary"/>
+        <Class IRI="#SpatialRelatedProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TopViewImagePosition"/>
+        <Class IRI="#LocationProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UniqueIdentityOfThing"/>
+        <Class abbreviatedIRI="ssn:Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserInterfaceSensing"/>
+        <Class abbreviatedIRI="ssn:Sensing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserInterfaceSensing"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="ssn:hasInput"/>
+            <Class abbreviatedIRI="ssn:Input"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VisualDepthInformation"/>
+        <Class IRI="#LocationProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wearable"/>
+        <Class IRI="#Mobility"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#XyCoordinateValue"/>
+        <Class IRI="#LocationValue"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#XyCoordinates"/>
+        <Class IRI="#LocationProperty"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#XyzCoordinates"/>
+        <Class IRI="#LocationProperty"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Altitude"/>
+        <Class IRI="#Elevation"/>
+        <Class IRI="#GpsCoordinate"/>
+        <Class IRI="#MeterDistanceToReferencePoint"/>
+        <Class IRI="#Orientation"/>
+        <Class IRI="#XyCoordinates"/>
+        <Class IRI="#XyzCoordinates"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Altitude"/>
+        <Class IRI="#Elevation"/>
+        <Class IRI="#GpsCoordinate"/>
+        <Class IRI="#MeterDistanceToReferencePoint"/>
+        <Class IRI="#XyCoordinates"/>
+        <Class IRI="#XyzCoordinates"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Mobility"/>
+        <Class IRI="#Stationary"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#Acceleration"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+        <NamedIndividual IRI="#AcousticProperty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#AcousticToaLocalization"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dul:NaturalPerson"/>
+        <NamedIndividual IRI="#Alice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TopViewImagePosition"/>
+        <NamedIndividual IRI="#AliceTopViewImagePosition"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocationValue"/>
+        <NamedIndividual IRI="#AltitudeValue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#AngularVelocity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#BarometricSensor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensorOutput"/>
+        <NamedIndividual IRI="#BarometricSensorOutput1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#BirdEyeViewCamera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dul:NaturalPerson"/>
+        <NamedIndividual IRI="#Bob"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#VisualDepthInformation"/>
+        <NamedIndividual IRI="#BobVisualDepthInformation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#XyCoordinates"/>
+        <NamedIndividual IRI="#BobXyCoordinate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Altitude"/>
+        <NamedIndividual IRI="#Bs1AltitudeProperty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#CapacitiveSensor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dul:NaturalPerson"/>
+        <NamedIndividual IRI="#Charlie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#CvSlam"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#DaiwaUbiBldgExterior"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#DaiwaUbiBldgHallway1F"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#DaiwaUbiquitousBuilding"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#DeadReckoning"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#DopplerRadar1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#DopplerScanLocalization"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+        <NamedIndividual IRI="#ElectricField"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#ElectricFieldLocalization"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#GpsBeaconRadioSignal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:ObservationValue"/>
+        <NamedIndividual IRI="#GpsObservationValue1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#GpsSensor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#GpsSensor2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensorOutput"/>
+        <NamedIndividual IRI="#GpsSensorOutput1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#GpsToaLocalizationMethod"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GpsCoordinate"/>
+        <NamedIndividual IRI="#Gs1GpsCoordProperty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:Sensing"/>
+        <NamedIndividual IRI="#HumanLocationTracking"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#XyzCoordinates"/>
+        <NamedIndividual IRI="#Imu2XyzCoordinates"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#InfraredProperty1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+        <NamedIndividual IRI="#InfraredProperty1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#InfraredProximitySensing1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#IntertialMeasurementUnit1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#IntertialMeasurementUnit2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#KinectOneSensor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#KinectSensor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueIdentityOfThing"/>
+        <NamedIndividual IRI="#LandmarkVisualFeatures"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LatitudeLongitudeCoordinateUnit"/>
+        <NamedIndividual IRI="#LatitudeLongitudeCoordinateUnit"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#MagneticField"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#MarkovChainFootstepLocalize"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#MenToilet3F"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+        <NamedIndividual IRI="#MicroDopplerSignature"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#MicrophoneSensor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:MeasurementRange"/>
+        <NamedIndividual IRI="#MobileCam2MeasurementRange"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#MobileCameraSensor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#MobileCameraSensor2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mobility"/>
+        <NamedIndividual IRI="#Mobility"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#NarrowBandRadar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#NarrowBandRadioSignal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#NarrowBandTomography"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#PassiveInfraredSensor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ObjectIdentificationCapability"/>
+        <NamedIndividual IRI="#PassiveRfidTagReadCapability"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#VirtualSensor"/>
+        <NamedIndividual IRI="#PeopleTrackingService"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#PiezoelectricSensor1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#PiezoelectricSensor2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+        <NamedIndividual IRI="#Pressure"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PressureObservation"/>
+        <NamedIndividual IRI="#PressureObservation1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#RfSignal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#RfidReader1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:MeasurementRange"/>
+        <NamedIndividual IRI="#RfidReaderMeasurementRange"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueIdentityOfThing"/>
+        <NamedIndividual IRI="#RfidTagUuid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Location"/>
+        <NamedIndividual IRI="#Room304"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#SiftHumanBodyDetection"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ObjectIdentificationCapability"/>
+        <NamedIndividual IRI="#SlamScenceRecognition"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dul:PhysicalObject"/>
+        <NamedIndividual IRI="#SmartElevator"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#SmartPhone1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#SmartPhone2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#SmartPhone3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+        <NamedIndividual IRI="#SoundIntensity"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stationary"/>
+        <NamedIndividual IRI="#Stationary"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#StationaryCamera1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+        <NamedIndividual IRI="#StructuredLightPattern"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#ThermalImager"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalPropertyAlteredByHumanPresence"/>
+        <NamedIndividual IRI="#ThermalRadiation"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#UltraWideBandRadarLocalizationMethod"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#UltraWideBandRadioPulse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#UltraWideBandTransceiver"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#UltrasonicTransducer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UserInterfaceSensing"/>
+        <NamedIndividual IRI="#UserInterfaceSensing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#VisualProperty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#WiFiFingerprintMethod"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#WiFiProximitySensing1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#XyCoordinates"/>
+        <NamedIndividual IRI="#WifiDevXyCoordinate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#WifiDevice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:SensingDevice"/>
+        <NamedIndividual IRI="#WifiProximitySensor"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#WifiRssiProperty"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dul:PhysicalObject"/>
+        <NamedIndividual IRI="#WoodTable"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#XyCoordinates"/>
+        <NamedIndividual IRI="#XyCoordinatesOnPressureSensitiveTiles"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocationSensorOutput"/>
+        <NamedIndividual IRI="#XyLocationOutput"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UniqueIdentityOfThing"/>
+        <NamedIndividual IRI="#iBeaconId"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:MeasurementCapability"/>
+        <NamedIndividual IRI="#iBeaconIdReceiverCapability"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LocalizationMethod"/>
+        <NamedIndividual IRI="#iBeaconProximitySensing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PhysicalProperty"/>
+        <NamedIndividual IRI="#iBeaconRadioSignal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="ssn:MeasurementRange"/>
+        <NamedIndividual IRI="#iBeaconReceiverRange"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#AcousticToaLocalization"/>
+        <NamedIndividual IRI="#AcousticProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#AliceTopViewImagePosition"/>
+        <NamedIndividual IRI="#Alice"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+        <NamedIndividual IRI="#BarometricSensor1"/>
+        <NamedIndividual IRI="#Mobility"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#BarometricSensor1"/>
+        <NamedIndividual IRI="#Bs1AltitudeProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:onPlatform"/>
+        <NamedIndividual IRI="#BarometricSensor1"/>
+        <NamedIndividual IRI="#Charlie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#produce"/>
+        <NamedIndividual IRI="#BarometricSensor1"/>
+        <NamedIndividual IRI="#BarometricSensorOutput1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasValue"/>
+        <NamedIndividual IRI="#BarometricSensorOutput1"/>
+        <NamedIndividual IRI="#AltitudeValue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+        <NamedIndividual IRI="#BirdEyeViewCamera"/>
+        <NamedIndividual IRI="#Stationary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#BirdEyeViewCamera"/>
+        <NamedIndividual IRI="#AliceTopViewImagePosition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#BobVisualDepthInformation"/>
+        <NamedIndividual IRI="#Bob"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#BobXyCoordinate"/>
+        <NamedIndividual IRI="#Bob"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#Bs1AltitudeProperty"/>
+        <NamedIndividual IRI="#BarometricSensor1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#CapacitiveSensor1"/>
+        <NamedIndividual IRI="#ElectricField"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#CvSlam"/>
+        <NamedIndividual IRI="#VisualProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#DeadReckoning"/>
+        <NamedIndividual IRI="#Acceleration"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#DeadReckoning"/>
+        <NamedIndividual IRI="#MagneticField"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#DeadReckoning"/>
+        <NamedIndividual IRI="#AngularVelocity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#DopplerRadar1"/>
+        <NamedIndividual IRI="#MicroDopplerSignature"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#ElectricFieldLocalization"/>
+        <NamedIndividual IRI="#ElectricField"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasUnitOfMeasurement"/>
+        <NamedIndividual IRI="#GpsObservationValue1"/>
+        <NamedIndividual IRI="#LatitudeLongitudeCoordinateUnit"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+        <NamedIndividual IRI="#GpsSensor1"/>
+        <NamedIndividual IRI="#Mobility"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#GpsSensor1"/>
+        <NamedIndividual IRI="#Gs1GpsCoordProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:onPlatform"/>
+        <NamedIndividual IRI="#GpsSensor1"/>
+        <NamedIndividual IRI="#Bob"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#produce"/>
+        <NamedIndividual IRI="#GpsSensor1"/>
+        <NamedIndividual IRI="#GpsSensorOutput1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#GpsSensor2"/>
+        <NamedIndividual IRI="#GpsBeaconRadioSignal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasValue"/>
+        <NamedIndividual IRI="#GpsSensorOutput1"/>
+        <NamedIndividual IRI="#GpsObservationValue1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#GpsToaLocalizationMethod"/>
+        <NamedIndividual IRI="#GpsBeaconRadioSignal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#Gs1GpsCoordProperty"/>
+        <NamedIndividual IRI="#GpsSensor1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#Imu2XyzCoordinates"/>
+        <NamedIndividual IRI="#IntertialMeasurementUnit2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#InfraredProximitySensing1"/>
+        <NamedIndividual IRI="#InfraredProperty1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#IntertialMeasurementUnit1"/>
+        <NamedIndividual IRI="#MagneticField"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#IntertialMeasurementUnit1"/>
+        <NamedIndividual IRI="#AngularVelocity"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#IntertialMeasurementUnit1"/>
+        <NamedIndividual IRI="#Acceleration"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#IntertialMeasurementUnit2"/>
+        <NamedIndividual IRI="#Imu2XyzCoordinates"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:onPlatform"/>
+        <NamedIndividual IRI="#IntertialMeasurementUnit2"/>
+        <NamedIndividual IRI="#Charlie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+        <NamedIndividual IRI="#KinectOneSensor"/>
+        <NamedIndividual IRI="#Stationary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#KinectOneSensor"/>
+        <NamedIndividual IRI="#BobVisualDepthInformation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#KinectSensor"/>
+        <NamedIndividual IRI="#StructuredLightPattern"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#LandmarkVisualFeatures"/>
+        <NamedIndividual IRI="#DaiwaUbiBldgExterior"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#MarkovChainFootstepLocalize"/>
+        <NamedIndividual IRI="#Pressure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isUsedByMethod"/>
+        <NamedIndividual IRI="#MicroDopplerSignature"/>
+        <NamedIndividual IRI="#DopplerScanLocalization"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#MicrophoneSensor1"/>
+        <NamedIndividual IRI="#AcousticProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#MobileCameraSensor1"/>
+        <NamedIndividual IRI="#VisualProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+        <NamedIndividual IRI="#MobileCameraSensor2"/>
+        <NamedIndividual IRI="#SlamScenceRecognition"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+        <NamedIndividual IRI="#MobileCameraSensor2"/>
+        <NamedIndividual IRI="#Mobility"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#NarrowBandRadar"/>
+        <NamedIndividual IRI="#NarrowBandRadioSignal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#NarrowBandTomography"/>
+        <NamedIndividual IRI="#NarrowBandRadioSignal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#PassiveInfraredSensor1"/>
+        <NamedIndividual IRI="#InfraredProperty1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#PassiveInfraredSensor1"/>
+        <NamedIndividual IRI="#MenToilet3F"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:forProperty"/>
+        <NamedIndividual IRI="#PassiveRfidTagReadCapability"/>
+        <NamedIndividual IRI="#RfidTagUuid"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
+        <NamedIndividual IRI="#PassiveRfidTagReadCapability"/>
+        <NamedIndividual IRI="#RfidReaderMeasurementRange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:implements"/>
+        <NamedIndividual IRI="#PeopleTrackingService"/>
+        <NamedIndividual IRI="#HumanLocationTracking"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#PeopleTrackingService"/>
+        <NamedIndividual IRI="#BobXyCoordinate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#produce"/>
+        <NamedIndividual IRI="#PeopleTrackingService"/>
+        <NamedIndividual IRI="#XyLocationOutput"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:madeObservation"/>
+        <NamedIndividual IRI="#PiezoelectricSensor1"/>
+        <NamedIndividual IRI="#PressureObservation1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#PiezoelectricSensor1"/>
+        <NamedIndividual IRI="#Room304"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+        <NamedIndividual IRI="#PiezoelectricSensor2"/>
+        <NamedIndividual IRI="#Stationary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#PiezoelectricSensor2"/>
+        <NamedIndividual IRI="#XyCoordinatesOnPressureSensitiveTiles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observedProperty"/>
+        <NamedIndividual IRI="#PressureObservation1"/>
+        <NamedIndividual IRI="#Pressure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+        <NamedIndividual IRI="#RfidReader1"/>
+        <NamedIndividual IRI="#PassiveRfidTagReadCapability"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#RfidTagUuid"/>
+        <NamedIndividual IRI="#WoodTable"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#SiftHumanBodyDetection"/>
+        <NamedIndividual IRI="#VisualProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:forProperty"/>
+        <NamedIndividual IRI="#SlamScenceRecognition"/>
+        <NamedIndividual IRI="#LandmarkVisualFeatures"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
+        <NamedIndividual IRI="#SlamScenceRecognition"/>
+        <NamedIndividual IRI="#MobileCam2MeasurementRange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:implements"/>
+        <NamedIndividual IRI="#SmartElevator"/>
+        <NamedIndividual IRI="#UserInterfaceSensing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#SmartElevator"/>
+        <NamedIndividual IRI="#DaiwaUbiquitousBuilding"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#SmartPhone1"/>
+        <NamedIndividual IRI="#WifiRssiProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#SmartPhone2"/>
+        <NamedIndividual IRI="#iBeaconRadioSignal"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasMeasurementCapability"/>
+        <NamedIndividual IRI="#SmartPhone3"/>
+        <NamedIndividual IRI="#iBeaconIdReceiverCapability"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+        <NamedIndividual IRI="#StationaryCamera1"/>
+        <NamedIndividual IRI="#Stationary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#StationaryCamera1"/>
+        <NamedIndividual IRI="#VisualProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#ThermalImager"/>
+        <NamedIndividual IRI="#ThermalRadiation"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#UltraWideBandRadarLocalizationMethod"/>
+        <NamedIndividual IRI="#UltraWideBandRadioPulse"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#UltraWideBandTransceiver"/>
+        <NamedIndividual IRI="#UltraWideBandRadioPulse"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#WiFiFingerprintMethod"/>
+        <NamedIndividual IRI="#WifiRssiProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#WiFiProximitySensing1"/>
+        <NamedIndividual IRI="#WifiRssiProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#WifiDevXyCoordinate"/>
+        <NamedIndividual IRI="#WifiDevice"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasProperty"/>
+        <NamedIndividual IRI="#WifiDevice"/>
+        <NamedIndividual IRI="#Mobility"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#WifiDevice"/>
+        <NamedIndividual IRI="#WifiDevXyCoordinate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:onPlatform"/>
+        <NamedIndividual IRI="#WifiDevice"/>
+        <NamedIndividual IRI="#Alice"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:observes"/>
+        <NamedIndividual IRI="#WifiProximitySensor"/>
+        <NamedIndividual IRI="#WifiRssiProperty"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasLocation"/>
+        <NamedIndividual IRI="#WoodTable"/>
+        <NamedIndividual IRI="#Room304"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#XyCoordinatesOnPressureSensitiveTiles"/>
+        <NamedIndividual IRI="#Bob"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        <NamedIndividual IRI="#iBeaconId"/>
+        <NamedIndividual IRI="#DaiwaUbiBldgHallway1F"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:forProperty"/>
+        <NamedIndividual IRI="#iBeaconIdReceiverCapability"/>
+        <NamedIndividual IRI="#iBeaconId"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="ssn:hasMeasurementProperty"/>
+        <NamedIndividual IRI="#iBeaconIdReceiverCapability"/>
+        <NamedIndividual IRI="#iBeaconReceiverRange"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#useProperty"/>
+        <NamedIndividual IRI="#iBeaconProximitySensing"/>
+        <NamedIndividual IRI="#iBeaconRadioSignal"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasQuantityValue"/>
+        <NamedIndividual IRI="#AltitudeValue"/>
+        <Literal datatypeIRI="&xsd;string">1.5</Literal>
+    </DataPropertyAssertion>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="#hasLocation"/>
+        <ObjectProperty abbreviatedIRI="dul:hasLocation"/>
+    </EquivalentObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#produce"/>
+        <ObjectProperty abbreviatedIRI="ssn:isProducedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasLocation"/>
+        <ObjectProperty IRI="#isLocationOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#useProperty"/>
+        <ObjectProperty IRI="#isUsedByMethod"/>
+    </InverseObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty abbreviatedIRI="ssn:observes"/>
+            <ObjectProperty abbreviatedIRI="ssn:isPropertyOf"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#observeFeature"/>
+    </SubObjectPropertyOf>
+    <EquivalentDataProperties>
+        <DataProperty IRI="#hasLocationName"/>
+        <DataProperty abbreviatedIRI="gn:name"/>
+    </EquivalentDataProperties>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDescription"/>
+        <DataProperty IRI="#hasQualityValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasMathML"/>
+        <DataProperty IRI="#hasQualityValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasMethodName"/>
+        <DataProperty IRI="#hasQualityValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasQualityValue"/>
+        <DataProperty abbreviatedIRI="dul:hasDataValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasQuantityValue"/>
+        <DataProperty abbreviatedIRI="dul:hasDataValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasURI"/>
+        <DataProperty IRI="#hasQualityValue"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasUnitStandardNotation"/>
+        <DataProperty IRI="#hasQualityValue"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUnitStandardNotation"/>
+        <Class IRI="#PositioningUnit"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDescription"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMathML"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMethodName"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasURI"/>
+        <Datatype abbreviatedIRI="xsd:anyURI"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUnitStandardNotation"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Altitude</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The altitude property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Altitude</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Altitude</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AltitudeValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Value for altitude in meter.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AltitudeValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Altitude Value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CvSlam</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Computer Vision based SLAM (Simultaneous Localization and Mapping).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Elevation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Represents indoor relative height from ground (e.g. 2F).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Elevation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Elevation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#GpsCoordinate</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">GPS Coordinate Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GpsSensor1</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Example GPS receiver sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HumanLocalizationSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Union of all 4 patterns for human localization sensor defined classes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HumanLocalizationSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Human Localization Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InfraredProximitySensing1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sense human presence using infrared sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LatitudeLongitudeCoordinateUnit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">WGS84 standard notation for latitude and longitude.
+
+Match against RegEx &quot;([+-]?\\d*\\.\\d+)(?![-+0-9\\.])&quot;
+
+This individual/class is intentionally named to has identical IRI to its type Class in order to test relaxed OWL 2 DL rule.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LocalizationMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A localization method. It may use some properties in the derivation of location output.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LocalizationMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Localization Method</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Location</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location of things. It&apos;s a subclass of ssn:FeatureOfInterest so it can be subject for an observation through its property.
+
+It is also a subclass of geo:SpatialThing and gn:Feature which, for the latter, is further linked to geographical feature related concepts in GN.
+
+Its definition is similar (skos:closeMatch) but not identical to Place concept in DUL because it&apos;s meant to be measurable through its property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Location</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LocationProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A property of a location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LocationProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LocationSensorOutput</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location sensor output is defined as the output from sensor, be it physical or virtual, that represents any kind of location or positioning information.
+
+The inclusion criteria are output that ssn:hasValue which is a kind of LocationValue or any ssn:ObservationValue that has hasUnitOfMeasurement relation to a PositioningUnit  or a combination of these two.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LocationSensorOutput</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location Sensor Output</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LocationValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">All kind of value describing a location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LocationValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Location Value</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mobility</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Mobility property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mobility</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Mobility</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ObjectIdentificationCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Measurement capability of a sensor that supports unique identification for a kind of thing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ObjectIdentificationCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Object Identification Capability</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PassiveRfidTagReadCapability</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Capability to read passive RFID tag.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalOrVirtualSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Covering class encompassing Sensor union with VirtualSensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PhysicalOrVirtualSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Physical Or Virtual Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Class for all kind of physical properties observable by sensors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PhysicalProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Physical Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalPropertyAlteredByHumanPresence</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Represents knowledge of physical properties of an object or surrounding those can be influenced by human presence near by.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PhysicalPropertyAlteredByHumanPresence</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Physical Property Altered By Human Presence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PhysicalPropertyForLocalizationMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Physical property used in localization method(s).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PhysicalPropertyForLocalizationMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Physical Property for Localization Method</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PiezoelectricSensor1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Piezoelectric sensor can observe force through changing in electrical property when a material is deformed.
+
+This individual proof a case in automatic reasoning via property chain ssn:observes that defines ssn:madeObservation o ssn:observedProperty o.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PositioningUnit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Unit describing position of an entity in space.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PositioningUnit</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Positioning Unit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Pressure</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Pressure property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PressureObservation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A sample class representing pressure observation.
+
+Hermit 1.3.8.3 seems to struggle reasoning hasValue restriction axiom: ssn:observedProperty value Vibration. It was added for testing, and is removed for performance. Similar observation can be cited from Manchester University OWL Family Tree tutorial.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PressureObservation1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Individual representing an observation of pressure caused by step on floor tile via a Piezoelectric sensor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RfidTagUuid</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A unique RFID UUID.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorForHumanPresence</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This pattern includes sensor that can detect human presence and physical object that has user interface and can give output on user&apos;s action with it (i.e. user interface sensing). The latter is to accommodate IoT aspects into sensor&apos;s realm.
+
+It is required that the sensor is asserted with location information to be inferred from and have limited range of sensing to confine an approximate area of human presence in case when no other estimation model is applied. 
+
+For physical object with user interface sensing, the interface must not be operated remotely from unbound distance location. The restriction on this is, however, implementation specific. As a suggestion, one may look at action log output to see if the operation is made locally or remotely.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SensorForHumanPresence</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor For Human Presence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorForLocalizationProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor that can measure properties used in a localization methods.
+
+However, with this high-level abstraction, it cannot be used to classify sensors observing all physical properties used by a method. To do that a defined class for each localization method must be created separately.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SensorForLocalizationProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor for Localization Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorForThingLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor for Thing Location is a sensor that can sense a presence of a unique thing associated with location information or can observe a unique property of a location. Location information may be retrieved directly from the object or from other means of location resolution.
+
+RFID and iBeacon are examples of identification technology which can be used as tag for object or location. They are normally sensed using a specific kind of reader device. Retrieved information may be location information or reference handle for 3rd party resolution service. 
+
+For example: uID Architecture offers object identification and information resolution infrastructure that decouples object identification from its context, e.g. location or URI, due to constraint resource of electronic tag and dynamic nature of context which may need update at any given time.
+
+Below are basic requirements for this human localization sensor scheme.
+
+Things must have their location information described directly or are embedded with resolvable handle like URI or ID.
+The “reader” sensor is a mobile terminal that can sense the presence of thing within limited or measurable range in order to determine relative distance, with a degree of precision, from itself to sensed thing so that sensing location can be inferred from thing’s location.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SensorForThingLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor for Thing Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/title"/>
+        <IRI>#SensorGivingLocationOutput</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor Giving Location Output</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorGivingLocationOutput</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">It is a SensorObserveHumanLocation that produces LocationSensorOuput.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SensorObserveHumanLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">There are 2 cases for this pattern. First, a mobile sensor that observes location property of the sensor itself and is attached to a person. Second, a stationary sensor or virtaul sensor that directly observing location property of human.
+
+However, in the first case, there is no guarantee that the sensor will output its own location since the expression using self restriction on a property chain is considered non-simple by OWL DL and cannot be computed. Thus it is responsibility of the user of this class to check for semantic validity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SensorObserveHumanLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sensor Observe Human  Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmartPhone1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This hypothetical smartphone has WiFi a/b/g.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmartPhone2</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">This hypothetical smartphone has BLE 4.0.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpatialRelatedProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Class for spatial related property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SpatialRelatedProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Spatial Related Property</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Stationary</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A property of sensor that has a fixed location when operates.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Stationary</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Stationary</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UniqueIdentityOfThing</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Class representing a property of thing that can be used to uniqely identify itself from other things.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UniqueIdentityOfThing</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Unique Identity of Thing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UserInterfaceSensing</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Class representing sensing method applied to user interface, meaning operation on an user interface is logged to sense some properties associating with the operation (e.g. presence of human/agent).
+
+The interface sensing definition does not include the case when it is operated remotely via a method that has no limit of operating distance (e.g. controlling via the Internet).
+
+Existential restriction on ssn:hasInput to ssn:Input is added to class definition to enforce that for an individual to be member of UserInterfaceSensing there must be at least 1 relation through ssn:hasInput to ssn:Input.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UserInterfaceSensing</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">User Interface Sensing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VirtualSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A virtual sensor is an abstract information entity that serves sensor function but has no physical body (e.g. sensing webservice).  By class definition it&apos;s a dul:Object implementing ssn:Sensing but never be a dul:PhysicalObject.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#VirtualSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Virtual Sensor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Wearable</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Wearable property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Wearable</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Wearable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Wgs84LatLonValue</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">WGS84 standard notation for latitude and longitude value.
+
+Match against &quot;float, float&quot; or &quot;([+-]?\\d*\\.\\d+)(?![-+0-9\\.])(,)(\\s+)([+-]?\\d*\\.\\d+)(?![-+0-9\\.])&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WiFiProximitySensing1</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">WiFi Proximity Sensing method.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WifiDevice</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Sample WiFi enabled device using WiFi fingerprint method but describe the ability to sense its own xy coordinates instead.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WifiRssiProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">WiFi RSSI.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WoodTable</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A wood table.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasDescription</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Description for an entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Property to specify Location for an entity. It&apos;s skos:exactMatch to dul:hasLocation. It also encompasses things which has location property via property chain.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasLocation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Has Location</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMathML</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">MathML expression in xsd:string.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMethodName</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A data property to describe method name.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasURI</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">URI for an entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasUnitOfMeasurement</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">The unit of measurement posed by an entity related to value.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasUnitStandardNotation</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Unit standard notation in xsd:string.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isLocationOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Specify an entity owning location property.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isLocationOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Is Location Of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isUsedByMethod</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Inverse of useProperty property that specifies property(ies) used in localization methods.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#observeFeature</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">It is the property chain linking ssn:Sensor to ssn:FeatureOfInterest (which may be the sensor itself).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#observeFeature</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Observe Feature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#produce</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Relation between a producer and a produced entity: for example, between a sensor and the produced output. 
+
+This property is needed to express class description of sensor that produces a particular output as ssn:isProducedBy is not symmetrical and thus cannot be used in property restriction for a Sensor class to a SensorOutput.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#produce</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">produce</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#useProperty</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">To use property in a method. This implies that a property value is used as input for the method.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#useSensor</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Property describing sensor used in localization method.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>geo:lat</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">WGS84 based standard notation of latitude.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>geo:lat</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">http://www.w3.org/2003/01/geo/wgs84_pos#lat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AbbreviatedIRI>geo:long</AbbreviatedIRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">WGS84 based standard notation of longitude.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <AbbreviatedIRI>geo:long</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">http://www.w3.org/2003/01/geo/wgs84_pos#lon</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
